@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 {% load staticfiles%}
 <html lang="en">
 <head>
@@ -13,4 +13,45 @@
     <img src="{% static 'images/mess.png' %}" alt="Uh,oh">
     
 </body>
-</html>
+</html> -->
+
+<!DOCTYPE html>
+{% load staticfiles%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>hi django</h1>
+    <h1>hi acess recordds</h1>
+    <div class="djangotwo">
+    {%  if access_records %}
+    <table>
+        <thead>
+            <th>ste name</th>
+            <th>Date accessed</th>
+        </thead>
+    
+        {% for acc in access_records %}
+        <tr>
+            <td>{{acc.name}}</td>
+            <td>{{acc.date}}</td>
+            
+        </tr>
+
+        {% endfor %}
+
+        {% else %}
+        <p>NO aCCEss REcords</p>
+        {% endif %}
+    </table>
+    </div>
+
+    
+</body>
+</html> 
+
